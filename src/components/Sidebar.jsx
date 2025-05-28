@@ -2,10 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { name: "Logs", path: "/logs" },
-  { name: "Database", path: "/database" },
-  { name: "Users", path: "/users" },
-  { name: "Settings", path: "/settings" },
+  { name: "Logs", path: "/logs" }
 ];
 
 function Sidebar() {
