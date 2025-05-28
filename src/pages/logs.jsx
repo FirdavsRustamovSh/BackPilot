@@ -35,7 +35,7 @@ function Logs() {
   }, [pageIndex, pageSize, search]);
 
   return (
-    <div className="min-h-screen bg-[#0C111D] text-white p-8">
+    <div className="flex-1 bg-[#0C111D] text-white p-8 overflow-auto">
       <h1 className="text-3xl font-semibold mb-6">Logs</h1>
 
       {/* Search bar */}
