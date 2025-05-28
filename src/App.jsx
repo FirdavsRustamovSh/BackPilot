@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Logs from "./pages/Logs";
-import Login from "./pages/Login";
+import Logs from "./pages/logs";
+import Login from "./pages/login";
 import DashboardLayout from "./components/Dashboard";
 
 function PrivateRoute({ children }) {
