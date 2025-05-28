@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import logo from './../assets/logo2.png'
+import logo from './../assets/logo.png'
 import backgroundImage from './../assets/backgroundImage.png'
 import { Eye, EyeClosed, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   //   const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -27,11 +28,12 @@ function Login() {
         email,
         password,
       });
-      console.log('res', res.data)
+      console.log('res', res.data.token)
 
-      const { accessToken, resetToken } = res.data;
+      const { accessToken, resetToken } = res.data.token;
       localStorage.setItem("token", accessToken);
       localStorage.setItem("refreshToken", resetToken);
+      navigate("/logs"); // Navigate after successful login
 
 
       //   navigate("/statistics");

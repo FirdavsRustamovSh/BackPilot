@@ -10,17 +10,21 @@ function Logs() {
 
   const fetchLogs = async () => {
     try {
+      const token = localStorage.getItem("token"); // Retrieve token from localStorage
+      
       const res = await axios.get("http://185.100.53.16:4001/api/Log", {
         params: {
           PageIndex: pageIndex,
           PageSize: pageSize,
           search,
         },
+        headers: {
+          Authorization: `Bearer ${token}`, // Include Bearer token
+        },
       });
 
       setLogs(res.data.data || []);
       setTotalPages(res.data.totalPages || 1);
-      console.log('logs',logs)
     } catch (err) {
       console.error("Failed to fetch logs:", err);
     }
@@ -32,7 +36,7 @@ function Logs() {
 
   return (
     <div className="min-h-screen bg-[#0C111D] text-white p-8">
-      <h1 className="text-3xl font-semibold mb-6">Журнал логов</h1>
+      <h1 className="text-3xl font-semibold mb-6">Logs</h1>
 
       {/* Search bar */}
       <div className="mb-6">
@@ -51,9 +55,11 @@ function Logs() {
           <thead className="bg-[#101828] text-gray-300 border-b border-[#344054]">
             <tr>
               <th className="text-left px-4 py-3">№</th>
-              <th className="text-left px-4 py-3">Дата</th>
-              <th className="text-left px-4 py-3">Тип</th>
-              <th className="text-left px-4 py-3">Описание</th>
+              <th className="text-left px-4 py-3">Action</th>
+              <th className="text-left px-4 py-3">Description</th>
+              <th className="text-left px-4 py-3">ipAddress</th>
+              <th className="text-left px-4 py-3">Method</th>
+              <th className="text-left px-4 py-3">User</th>
             </tr>
           </thead>
           <tbody>
@@ -70,9 +76,11 @@ function Logs() {
                   className="hover:bg-[#1A1F2E] transition"
                 >
                   <td className="px-4 py-3">{(pageIndex - 1) * pageSize + index + 1}</td>
-                  <td className="px-4 py-3">{log.date || "—"}</td>
-                  <td className="px-4 py-3">{log.type || "—"}</td>
+                  <td className="px-4 py-3">{log.action || "—"}</td>
                   <td className="px-4 py-3">{log.description || "—"}</td>
+                  <td className="px-4 py-3">{log.ipAddress || "—"}</td>
+                  <td className="px-4 py-3">{log.method || "—"}</td>
+                  <td className="px-4 py-3">{log.performedBy || "—"}</td>
                 </tr>
               ))
             )}
