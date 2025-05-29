@@ -39,7 +39,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        {/* <Route
+        <Route
           path="/bot"
           element={
             <PrivateRoute>
@@ -48,7 +48,7 @@ function App() {
               </DashboardLayout>
             </PrivateRoute>
           }
-        /> */}
+        />
 
         {/* Можно добавить и другие страницы */}
       </Routes>

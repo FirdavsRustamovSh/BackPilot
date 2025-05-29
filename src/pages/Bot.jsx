@@ -12,7 +12,7 @@ function Bot() {
     try {
       const token = localStorage.getItem("token"); // Retrieve token from localStorage
       
-      const res = await axios.get("http://185.100.53.16:4001/api/Bot", {
+      const res = await axios.get("http://172.17.6.87:4001/api/Bot", {
         params: {
           PageIndex: pageIndex,
           PageSize: pageSize,

@@ -12,7 +12,7 @@ function Logs() {
     try {
       const token = localStorage.getItem("token"); // Retrieve token from localStorage
       
-      const res = await axios.get("http://185.100.53.16:4001/api/Log", {
+      const res = await axios.get("http://172.17.6.87:4001/api/Log", {
         params: {
           PageIndex: pageIndex,
           PageSize: pageSize,

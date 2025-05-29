@@ -24,7 +24,7 @@ function Login() {
     }
 
     try {
-      const res = await axios.post("http://185.100.53.16:4001/api/Auth/login", {
+      const res = await axios.post("http://172.17.6.87:4001/api/Auth/login", {
         email,
         password,
       });
