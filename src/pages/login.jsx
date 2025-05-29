@@ -45,7 +45,7 @@ function Login() {
   return (
     <div className="flex h-screen w-full">
       {/* Left Panel */}
-      <div className="w-full md:w-[50%] bg-[#0C111D] flex flex-col justify-between items-center px-6 py-8 rounded-tr-[28px] rounded-br-[28px]">
+      <div className="w-full md:w-[50%] bg-[#0C111D] flex flex-col justify-between items-center px-6 py-8 rounded-tr-[28px] rounded-br-[28px] z-10">
         {/* Logo placeholder */}
         <div className="flex items-center justify-center ">
           <img src={logo} alt="" className="h-32 w-32" />
@@ -106,7 +106,7 @@ function Login() {
       </div>
 
       {/* Right Side (background image) */}
-      <div className="hidden md:flex flex-grow relative bg-black z-[-1] -ml-[136px] lg:w-[35%] md:w-[35%]">
+      <div className="hidden md:flex flex-grow relative bg-black -ml-[136px] lg:w-[35%] md:w-[35%]">
         <div
           className="w-full h-full bg-cover bg-center" >
           <img

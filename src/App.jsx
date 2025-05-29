@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Logs from "./pages/logs";
 import Login from "./pages/login";
+import Database from "./pages/Database";
+import Bot from "./pages/Bot";
 import DashboardLayout from "./components/Dashboard";
 
 function PrivateRoute({ children }) {
@@ -27,6 +29,26 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/database"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <Database />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        />
+        {/* <Route
+          path="/bot"
+          element={
+            <PrivateRoute>
+              <DashboardLayout>
+                <Bot />
+              </DashboardLayout>
+            </PrivateRoute>
+          }
+        /> */}
 
         {/* Можно добавить и другие страницы */}
       </Routes>
